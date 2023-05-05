@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  .test{
+    font-size: 3rem;
+    text-transform: capitalize;
+    margin-top: 5%;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    
+  }
+   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+</style>
+<head>
+ 
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPAAuto Inventory</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <script src="/node_modules/bulma-extensions/bulma-slider/dist/bulma-slider.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+</head>
+<body >
+    
+        <%- include('./partials/head.ejs') %>
+        <img src="/img/UsedCars.png">
+
+<br>
+
+<br>
+
+<div style="margin-left: 35px; font-family: 'Open Sans', sans-serif; font-weight:800;" class="dropdown is-hoverable">
+  <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+      <span>Sort</span>
+      <span class="icon is-small">
+        <i class="fas fa-angle-down" aria-hidden="true"></i>
+      </span>
+    </button>
+  </div>
+  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+    <div class="dropdown-content">
+
+        <a href="/filter?sort=recommended" class="dropdown-item">
+        Recommended
+      </a>
+      <a href="/filter?sort=new" class="dropdown-item">
+        Newest Year
+    </a>
+    <a href="/filter?sort=old" class="dropdown-item">
+      Oldest Year
+  </a>
+      <a href="/filter?sort=lowest" class="dropdown-item">
+        Lowest Price
+    </a>
+    <a href="/filter?sort=highest" class="dropdown-item">
+      Highest Price
+  </a>
+  <a href="/filter?sort=lowmiles" class="dropdown-item">
+    Lowest Miles
+  </a>
+  <a href="/filter?sort=highmiles" class="dropdown-item">
+    Highest Miles
+</a>
+
+   
+     
+    </div>
+  </div>
+
+  
+</div>
+      <div style="margin-left: 20px;" class="dropdown is-hoverable">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+            <span>Make</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+
+            <% makefilter.forEach(function(makefilter, index) { %>
+              <a href="/filter?car=<%-makefilter.make%>" class="dropdown-item">
+                <%-makefilter.make%> [<%-makefilter.count%>]
+            </a>
+            <% }) %>
+         
+           
+          </div>
+        </div>
+
+        
+      </div>
+
+      <div style="margin-left: 20px;" class="dropdown is-hoverable">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+            <span>Type</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div style="font-family: 'Open Sans', sans-serif;" class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+
+            <% bodyfilter.forEach(function(bodyfilter, index) { %>
+              <a href="/filter?type=<%-bodyfilter.body%>" class="dropdown-item">
+                <%-bodyfilter.quick%> [<%-bodyfilter.count%>]
+            </a>
+            <% }) %>
+       
+         
+           
+          </div>
+        </div>
+
+        
+      </div>
+
+
+      <div style="margin-left: 20px;" class="dropdown is-hoverable">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+            <span>Price</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+
+              <a href="/filter?price=10000" class="dropdown-item">
+                $1,000 - $10,000
+            </a>
+            <a href="/filter?price=20000" class="dropdown-item">
+              $10,001 - $20,000
+          </a>
+          <a href="/filter?price=30000" class="dropdown-item">
+            $20,001 - $30,000
+        </a>
+        <a href="/filter?price=40000" class="dropdown-item">
+          $30,001 - $40,000
+      </a>
+      <a href="/filter?price=50000" class="dropdown-item">
+        $40,001 - $50,000
+    </a>
+    <a href="/filter?price=99999" class="dropdown-item">
+      $50,001 - $99,999
+  </a>
+           
+          </div>
+        </div>
+
+        
+      </div>
+
+      <div style="margin-left: 20px;" class="dropdown is-hoverable">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+            <span>Features</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+
+            <a href="/filter?feature=backupCamera" class="dropdown-item">
+              Backup Camera
+          </a>
+              <a href="/filter?feature=heatedSeats" class="dropdown-item">
+                Heated Seats
+            </a>
+          <a href="/filter?feature=oneOwner" class="dropdown-item">
+            One Owner
+        </a>
+        <a href="/filter?feature=satelliteRadio" class="dropdown-item">
+          SiriusXM™
+      </a>
+          <a href="/filter?feature=sunroof" class="dropdown-item">
+            Sunroof
+        </a>
+        <a href="/filter?feature=warranty" class="dropdown-item">
+        Warranty
+    </a>
+        <a href="/filter?feature=wifi" class="dropdown-item">
+          WiFi
+      </a>
+      
+       
+   
+           
+          </div>
+        </div>
+
+        
+      </div>
+    <div class="wrapper">
+
+
+
+
+    <br>
+    <br>
+     
+
+        <div class="items" style="font-family: Open Sans; font-weight:500;">
+            <% if(inventory != null) { %>
+            <% inventory.forEach(function(inventory, index) { %>
+              <a style="font-family: 'Open Sans', sans-serif;" href="/lookup?vin=<%-inventory.vin%>">
+                    <div style="font-family: 'Open Sans', sans-serif;" class="news__card"> 
+                    <!--  <img src="https://cdn.imagin.studio/getImageCacheBundle?licenseBundleSize=1000&channelName=instagram_imagin.studio&campaignId=ad99884&customer=uscoopergoodincompany&tailoring=imagin&make=<%-inventory.make%>&modelFamily=<%-inventory.model%>&angle=1&modelYear=2015"> -->
+                    <img style="font-family: 'Open Sans', sans-serif;" src="<%- inventory.primaryPhotoUrl %>">
+                        <p style="font-weight: 600; font-size: 22px; font-family: 'Open Sans', sans-serif;"><%- inventory.year %> <%- inventory.make %> <%- inventory.model %></p>
+                        <p><%- inventory.price %></p>
+                        <p><%- inventory.mileage %> Miles</p>
+                        
+                      </a>
+                    </div>
+                 
+                </a>
+            <% }) %>
+            <% } else { %>
+                No posts found.
+            <% } %>
+        </div>
+<div>
+  <br>
+  <br>
+      
+    </div>  
+  </div>  
+<br>
+<br>
+<br>
+<br>
+<center>
+<div style="margin-top: 10%;">
+</div>
+</center>
+  <br>
+    <script>
+      function callfunction() {
+        var slider = document.getElementById("sliderWithValue");
+        <meta http-equiv="refresh" content="7; url='https://www.w3docs.com'" />
+
+
+
+
+
+      }
+
+
+      </script>
+
+
+
+</body>
+</html> 

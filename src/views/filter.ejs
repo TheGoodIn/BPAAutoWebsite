@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPAAuto Homepage</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+</head>
+<body>
+
+      <%- include('./partials/head.ejs') %>
+      <div>
+        <br>
+        <br>
+       <a href="/"> <button style="margin-left: 4%;" class="button is-dark">Clear Filters</button></a>
+      </div>
+
+
+      <div hidden class="dropdown is-hoverable">
+        <div  hidden class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+            <span>Make</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+            
+       
+            <% modelinventory.forEach(function(modelinventory, index) { %>
+              <a href="/filter?make=<%-modelinventory%>" class="dropdown-item">
+                <%-modelinventory%>
+            </a>
+            
+              <% }) %>
+ 
+         
+            </div>
+        </div>
+      </div>
+      
+    <div class="wrapper">
+   
+      <div class="items">
+        <% if(inventory != null) { %>
+        <% inventory.forEach(function(inventory, index) { %>
+          <a href="/lookup?vin=<%-inventory.vin%>">
+            <div class="news__card"> 
+            <!--  <img src="https://cdn.imagin.studio/getImageCacheBundle?licenseBundleSize=1000&channelName=instagram_imagin.studio&campaignId=ad99884&customer=uscoopergoodincompany&tailoring=imagin&make=<%-inventory.make%>&modelFamily=<%-inventory.model%>&angle=1&modelYear=2015"> -->
+            <img src="<%- inventory.primaryPhotoUrl %>">
+                <h2><%- inventory.year %> <%- inventory.make %> <%- inventory.model %></h2>
+                <p><%- inventory.price %></p>
+                <p><%- inventory.mileage %> Miles</p>
+                
+              </a>
+            </div>
+         
+        </a>
+               
+            <% }) %>
+            <% } else { %>
+                No posts found.
+            <% } %>
+        </div>
+    </div>  
+    
+</body>
+</html> 

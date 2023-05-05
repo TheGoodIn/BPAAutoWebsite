@@ -1,0 +1,321 @@
+@charset "utf-8";
+
+// Bulma
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+// Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap");
+
+// 2. Set your own initial variables
+$link: #282828;
+$primary: #1da1f2;
+$dark: #121212;
+$info: #181818;
+
+$navbar-background-color: $dark;
+$navbar-burger-color: white;
+$navbar-burger-hover-color: white;
+$card-shadow: 0;
+$navbar-divider-background-color: #404040;
+$navbar-dropdown-item-hover-background-color: #404040;
+$navbar-dropdown-item-hover-color: #ffffff;
+$navbar-dropdown-arrow: white;
+$input-color: white;
+$input-hover-border-color: $link;
+$input-border-color: $link;
+$input-background-color: $link;
+$input-hover-color: $link;
+$card-background-color: #181818;
+$navbar-item-hover-background-color: $dark;
+$navbar-item-hover-color: $grey;
+$navbar-item-color: white;
+$family-secondary: "Montserrat Light", sans-serif;
+$navbar-item-img-max-height: 50px;
+$navbar-dropdown-background-color: #181818;
+$code-background: $dark;
+
+// Update the sans-serif font family
+$family-primary: "Montserrat", sans-serif;
+
+// Footer
+$footer-background-color: #181818;
+
+// 4. Import the rest of Bulma
+@import "../node_modules/bulma/bulma";
+@import "../node_modules/bulma-list/sass/bulma-list.sass";
+@import "../node_modules/bulma-spacing/bulma-spacing.scss";
+@import "../node_modules/bulma-pricingtable/dist/css/bulma-pricingtable.sass";
+
+.pricing-table .pricing-plan .plan-price {
+  background-color: #181818 !important;
+}
+
+.pricing-table .pricing-plan .plan-item {
+  background: #121212;
+}
+
+.plan-footer {
+  background-color: #181818 !important;
+}
+
+.pricing-table .pricing-plan .plan-header {
+  background-color: #181818 !important;
+}
+
+.pricing-table {
+  background-color: #181818 !important;
+}
+
+.pricing-table .pricing-plan {
+  background-color: #181818 !important;
+}
+
+.pricing-table .pricing-plan .plan-header {
+  color: white;
+}
+
+.pricing-table .pricing-plan .plan-price {
+  color: white;
+}
+
+.pricing-table
+  .pricing-plan
+  .plan-price
+  .plan-price-amount
+  .plan-price-currency {
+  color: white;
+}
+
+// Custom CSS
+body,
+html {
+  background-color: $dark;
+}
+
+strong {
+  color: white;
+}
+
+.navbar-item-b {
+  margin: 15px 0px 0px 10px;
+}
+
+.hero-body {
+  background: url(https://siasky.net/AAAtlqTmnZPJQx9O6x8clLpIXDmaJF4g18FJtNRygHBJNg)
+    no-repeat center center;
+  background-size: cover;
+}
+
+.circles-upsell {
+  background: url(https://siasky.net/AAAtlqTmnZPJQx9O6x8clLpIXDmaJF4g18FJtNRygHBJNg)
+    no-repeat center center;
+  background-size: cover;
+}
+
+.upsell-box {
+  background: url(https://siasky.net/AAAtlqTmnZPJQx9O6x8clLpIXDmaJF4g18FJtNRygHBJNg)
+    no-repeat center center;
+  background-size: cover;
+}
+
+.error-indicator-box-in {
+  background: url(https://siasky.net/AAAtlqTmnZPJQx9O6x8clLpIXDmaJF4g18FJtNRygHBJNg)
+    no-repeat center center;
+  background-size: cover;
+}
+
+.success-indicator-box-in {
+  background: url(https://siasky.net/AABoi-4aLPeJ2M97cXH_nujbOpBe4GJ1InBh90YOhIvpuQ)
+    no-repeat center center;
+  background-size: cover;
+}
+
+// Add Roudned Gray border
+.treshold-card {
+  border-radius: 5px;
+  border: 1px solid #282828;
+  padding: 15px;
+}
+
+.list-item {
+  background-color: #181818 !important;
+  color: #fffffa !important;
+}
+
+$box-background-color: #181818 !important;
+
+// Google Spinner
+$offset: 187;
+$duration: 1.4s;
+
+.spinner {
+  animation: rotator $duration linear infinite;
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+.path {
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: dash $duration ease-in-out infinite,
+    colors ($duration * 4) ease-in-out infinite;
+}
+
+@keyframes colors {
+  0% {
+    stroke: $primary;
+  }
+  25% {
+    stroke: white;
+  }
+  50% {
+    stroke: $primary;
+  }
+  75% {
+    stroke: white;
+  }
+  100% {
+    stroke: $primary;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: $offset;
+  }
+  50% {
+    stroke-dashoffset: $offset/4;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: $offset;
+    transform: rotate(450deg);
+  }
+}
+
+.treshold-card-full {
+  border-radius: 5px;
+  border: 1px solid #282828;
+  padding: 15px;
+  height: max-content;
+}
+
+/* ------------------------------------
+     COMMON STYLE
+   ------------------------------------ */
+#autocomplete-textarea {
+  min-height: 80px;
+}
+
+#autocomplete-textarea a {
+  text-decoration: none;
+  font-weight: normal;
+  color: #181818;
+}
+
+.dropdown-menu .textcomplete-item a,
+.dropdown-menu .textcomplete-item a:hover {
+  cursor: pointer;
+  font-weight: normal;
+  color: #000;
+  position: relative;
+  padding: 3px 10px;
+}
+
+.dropdown-menu .textcomplete-item.active a {
+  background: #f0f0f0;
+}
+
+.dropdown-menu {
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Highlighting of the matching part 
+     of each search result */
+.dropdown-menu .textcomplete-item a em {
+  font-style: normal;
+  font-weight: bold;
+}
+
+.dropdown-menu .textcomplete-footer {
+  border-top: solid 1px #f0f0f0;
+  margin-top: 3px;
+}
+
+/* ------------------------------------
+       Used in 
+       autocomplete-with-pictures.html
+     ------------------------------------ */
+.dropdown-menu .textcomplete-item a {
+  box-sizing: border-box;
+  height: 42px;
+}
+
+.dropdown-menu .textcomplete-item .picture {
+  border-radius: 2em;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  float: left;
+}
+
+.dropdown-menu .textcomplete-item .picture img {
+  width: 32px;
+}
+
+.dropdown-menu .textcomplete-item .name {
+  float: left;
+  margin: 5px 0 0 5px;
+}
+
+/* ------------------------------------
+       Used in 
+       rich-html-textarea.html
+     ------------------------------------ */
+.tag-item,
+.tag-item:visited {
+  font-weight: normal;
+  padding: 2px 3px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background: #f0f0f0;
+  cursor: default;
+  border: solid 1px #dadada;
+}
+
+.tag-item:hover {
+  text-decoration: none;
+}
+
+.tag-item .picture-wrapper {
+  border-radius: 2em;
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  overflow: hidden;
+  top: 3px;
+}
+
+.tag-item .picture-wrapper img {
+  width: 16px;
+}
+
+.tag-item .label {
+  color: #181818;
+}

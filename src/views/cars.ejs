@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  .test {
+    font-size: 3rem;
+    text-transform: capitalize;
+    margin-top: 5%;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+
+  }
+
+  .button {
+    background-color: #04AA6D;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .button5 {
+    border-radius: 12px;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+
+      /* Center the heading */
+      h1 {
+        text-align: center;
+        margin-top: 50px;
+      }
+      
+      /* Style the button container */
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+      }
+      
+      /* Style the button rows */
+      .button-row {
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+        margin-bottom: 20px;
+      }
+      
+      /* Style the buttons */
+      .button-row a {
+        display: block;
+        width: 22%;
+        padding: 15px;
+        text-align: center;
+        background-color: #00476b;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s ease;
+      }
+      
+      /* Hover effect for buttons */
+      .button-row a:hover {
+        background-color: #777;
+      }
+      
+    
+</style>
+
+<head>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BPAAuto Homepage</title>
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <script src="/node_modules/bulma-extensions/bulma-slider/dist/bulma-slider.min.js"></script>
+
+</head>
+
+<body>
+
+  <%- include('./partials/head.ejs') %>
+  <img src="/img/BPAAutoBanner.png">
+
+  <br>
+
+  <br>
+
+
+  <center>
+    <div class="animationtest" style="font-family: 'Open Sans', sans-serif; font-weight:700; margin: auto; width: 100%; padding-bottom: 2%;">
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <div class="itemcard box">
+          <img style="height: 50%;" src="/img/buyacar.png">
+          <p style="margin-left: 2%; font-size: 30px; color: black;">Buy a Used Car.</p>
+          <a href="/cars">
+            <button style="margin-top: 3%; background-color: #00476b; color: white; border-radius: 15px;"
+              class="button button4">View Used Inventory</button>
+          </a>
+
+          <br>
+
+        </div>
+        <div class="itemcard box">
+          <img style="height: 50%;" src="/img/workoncar.png">
+          <p style="margin-left: 2%; font-size: 30px; color: black;">Car Maintenance.</p>
+          <a href="/maintenance">
+            <button style="margin-top: 3%; background-color: #00476b; color: white; border-radius: 15px;"
+              class="button button4">Schedule Maintenance Now</button>
+          </a>
+          <br>
+
+        </div>
+        <div class="itemcard box">
+          <img style="height: 50%;" src="/img/sellacar.png">
+          <p style="margin-left: 2%; font-size: 30px; color: black;">About BPA Auto.</p>
+          <a href="/aboutus">
+            <button style="margin-top: 3%; background-color: #00476b; color: white; border-radius: 15px;"
+              class="button button4">Learn About Us</button>
+          </a>
+          <br>
+
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </center>
+  <center>
+
+    <div class="hidmobile" style="font-family: 'Josefin Sans', sans-serif; font-weight:700; margin: auto; width: 100%;">
+      <p style="font-size: 40px; color: #000000;">Search By Type</p>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <% bodyfilter.forEach(function(bodyfilter, index) { %>
+
+        <div class="deskcard">
+          <a href="/filter?type=<%-bodyfilter.body%>" class="dropdown-item">
+
+            <img src="<%-bodyfilter.image%>">
+            <p style="color: black;"> <%-bodyfilter.quick%> [<%-bodyfilter.count%>]</p>
+          </a>
+        </div>
+        <br>
+
+        <% }) %>
+      </div>
+
+    </div>
+  </center>
+  <br>
+  <br>
+
+  </div>
+  </div>
+  <center>
+  <div class="hidmobile">
+  <a href="/cars">
+    <button style="background-color: #00476b; color: white; border-radius: 20px; margin-top: -2%;"
+      class="button button4">View Used Inventory</button>
+  </a>
+</div>
+</center>
+
+<div style="font-family: 'Josefin Sans', sans-serif; margin: auto; width: 100%; padding-bottom: 5%;">
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <div class="itemcard2 box">
+      <img style="height: 50%;" src="/img/buyacar.png">
+      <p style="margin-left: 2%; font-size: 30px; color: black;">Buy a Used Car.</p>
+      <a href="/cars">
+        <button style="margin-top: 3%; background-color: #00476b; color: white; border-radius: 15px;"
+          class="button button4">View Used Inventory</button>
+      </a>
+
+      <br>
+
+    </div>
+  
+
+
+
+
+  </div>
+</div>
+
+<div style="font-family: 'Josefin Sans', sans-serif; margin: auto; width: 100%; padding-bottom: 5%;">
+
+<div class="itemcard2 box">
+  <img style="height: 50%;" src="/img/workoncar.png">
+  <p style="margin-left: 2%; font-size: 30px; color: black;">Car Maintenance.</p>
+  <a href="/maintenance">
+    <button style="margin-top: 3%; background-color: #00476b; color: white; border-radius: 15px;"
+      class="button button4">Schedule Maintenance Now</button>
+  </a>
+  <br>
+
+</div>
+</div>
+<div style="font-family: 'Josefin Sans', sans-serif; margin: auto; width: 100%;">
+<div class="itemcard2 box">
+  <img style="height: 50%;" src="/img/sellacar.png">
+  <p style="margin-left: 2%; font-size: 30px; color: black;">About BPA Auto.</p>
+  <a href="/aboutus">
+    <button style="margin-top: 3%; background-color: #00476b; color: white; border-radius: 15px;"
+      class="button button4">Learn About Us</button>
+  </a>
+  <br>
+
+</div>
+</div>
+<center>
+<div class="hidmobile" style="font-family: 'Josefin Sans', sans-serif; font-weight:700; margin: auto; width: 100%; margin-top: -5%;">
+<p style="font-size: 40px; color: #000000;"></h1>Shop Your Favorite Brands</p>
+    <div style="font-family: 'Josefin Sans'," class="button-container">
+      <div class="button-row">
+        <a href="/filter?car=Toyota">Toyota</a>
+        <a href="/filter?car=Honda"="#">Honda</a>
+        <a href="/filter?car=Nissan"="#">Nissan</a>
+        <a href="/filter?car=Ford"="#">Ford</a>
+      </div>
+      <div class="button-row">
+        <a href="/filter?car=Chevrolet"="#">Chevrolet</a>
+        <a href="/filter?car=Volkswagen"="#">Volkswagen</a>
+        <a href="/filter?car=BMW"="#">BMW</a>
+        <a href="/filter?car=Mercedes-Benz"="#">Mercedes-Benz</a>
+      </div>
+      <div class="button-row">
+        <a href="/filter?car=Audi"="#">Audi</a>
+        <a href="/filter?car=Subaru"="#">Subaru</a>
+        <a href="/filter?car=Tesla"="#">Tesla</a>
+        <a href="/filter?car=Mazda"="#">Mazda</a>
+      </div>
+      
+    </div>
+    </div>
+  <center>
+
+  <br>
+</center>
+  <center>
+    <div style="margin-top: 10%;">
+    </div>
+  </center>
+  <br>
+  <script>
+    
+
+
+    ScrollReveal().reveal('.hidmobile',  {  easing: 'ease-in', delay: 2000 });
+
+   
+  </script>
+
+<%- include('./partials/footer.ejs') %>
+
+
+</body>
+
+</html>

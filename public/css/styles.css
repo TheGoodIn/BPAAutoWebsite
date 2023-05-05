@@ -1,0 +1,155 @@
+
+
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #f6f6f6;
+}
+
+img {
+  max-width: 100%;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  color: #fff;
+  background-color: #10555A;
+  margin-bottom: 10px;
+}
+
+.header__search input[type=text] {
+  padding: 6px;
+  border: none;
+}
+
+.header__search input[type=submit] {
+  float: right;
+  padding: 6px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.wrapper {
+  padding: 0 1rem;
+}
+
+.news {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(360px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-gap: 2rem;
+}
+
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+  .news__card {
+    width: 25%;
+    padding-left: 25px;
+    padding-top: 20px;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 767px) {
+  .news__card {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+}
+.news__card:hover {
+  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.23);
+}
+
+
+@media (min-width: 768px) {
+  .itemcard {
+    width: 20%;
+    padding-top: 0%; 
+    padding-left: 0%; 
+    padding-right: 0%; 
+    float: left;
+     margin-left: 1%;
+     margin-bottom: 24px;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 767px) {
+  .itemcard {
+    display: none;
+  }
+}
+
+@media (min-width: 767px) {
+  .itemcard2 {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .hidmobile {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .deskcard {
+    width: 13%; 
+    margin-left: 1%; 
+    float: left;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 767px) {
+  .deskcard {
+    width: 100%; 
+    float: right;
+    padding-bottom: 10px;
+
+  }
+}
+
+
+
+@media (min-width: 768px) {
+  .formresize {
+    width: 75%;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 767px) {
+  .formresize {
+    width: 90%;
+    padding-bottom: 10px;
+  }
+}
+
+.news-single {
+  background-color: #fff;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/*# sourceMappingURL=styles.css.map */

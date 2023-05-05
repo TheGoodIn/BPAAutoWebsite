@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+.items2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-width: 200px; /* set a minimum width for the container */
+
+}
+
+.news__card2 {
+  background-color: #fff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease-in-out;
+  width: calc(33.33% - 20px);
+  flex: 1 1 30%; /* adjust the flex property to fill available space */
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.news__card2:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.news__card2 img {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.news__card2 h2 {
+  color: #333;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.news__card2 p {
+  color: #999;
+  font-size: 16px;
+  margin: 5px 0;
+  text-align: center;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  color: #12263a;
+  position: relative; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  padding-right: 3%;
+  
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  box-sizing: border-box;
+}
+.modal_ul {
+    color: #12263a;
+
+  columns: 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+  list-style-type: disc;
+
+}
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    line-height: 1.5;
+}
+.card-wrapper{
+    max-width: 90%;
+    margin: 0 auto;
+}
+img{
+    width: 100%;
+    display: block;
+}
+.img-display{
+  position: relative;
+    overflow: hidden;
+}
+.img-showcase{
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.img-showcase img{
+    min-width: 100%;
+}
+.img-select{
+  position: relative;
+    display: flex;
+}
+.img-item{
+  height: auto;
+    margin: 0.3rem;
+}
+.img-item:nth-child(1),
+.img-item:nth-child(2),
+.img-item:nth-child(3){
+    margin-right: 0;
+}
+.img-item:hover{
+    opacity: 0.8;
+}
+.product-content{
+    padding: 2rem 1rem;
+}
+.product-title{
+    margin-top: -1%;
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+}
+
+.product-miles{
+    font-size: 1.25rem;
+    text-transform: capitalize;
+    margin-top: 13px;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+}
+.product-title::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #12263a;
+}
+.product-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    background: #00476b;
+    color: #fff;
+    padding: 0 0.3rem;
+    transition: all 0.5s ease;
+}
+.product-link:hover{
+    opacity: 0.9;
+}
+.product-rating{
+    color: #ffc107;
+}
+.product-rating span{
+    font-weight: 600;
+    color: #252525;
+}
+.product-price{
+    margin: 1rem 0;
+    color: #252525;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+.product-price span{
+    font-weight: 400;
+}
+.last-price span{
+    color: #f64749;
+    text-decoration: line-through;
+}
+
+.product-detail h2{
+    font-size: 1.25rem;
+    text-transform: capitalize;
+    margin-top: 13px;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+}
+.product-detail p{
+    font-size: 0.9rem;
+    padding: 0.3rem;
+    opacity: 0.8;
+}
+.product-detail ul{
+    margin: 1rem 0;
+    text-transform: capitalize;
+    font-size: 0.9rem;
+}
+.product-detail ul li{
+    margin: 0;
+    list-style: none;
+    background: url(shoes_images/checked.png) left center no-repeat;
+    background-size: 18px;
+    margin: 0.4rem 0;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.product-detail ul li span{
+    font-weight: 400;
+}
+.purchase-info{
+    margin: 1.5rem 0;
+}
+.purchase-info input,
+.purchase-info .btn{
+    font-size: 1rem;
+
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+}
+.purchase-info input{
+    width: 90px;
+}
+.purchase-info .btn{
+    cursor: pointer;
+    color: #fff;
+}
+.purchase-info .btn:first-of-type{
+    background: #256eff;
+}
+.purchase-info .btn:last-of-type{
+    background: #256eff;
+}
+.purchase-info .btn:hover{
+    opacity: 0.9;
+}
+.social-links{
+    display: flex;
+    align-items: center;
+}
+.social-links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #000;
+    border: 1px solid #000;
+    margin: 0 0.2rem;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.5s ease;
+}
+.social-links a:hover{
+    background: #000;
+    border-color: transparent;
+    color: #fff;
+}
+
+@media screen and (min-width: 992px){
+    .card{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+    .card-wrapper{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .product-imgs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .product-content{
+        padding-top: 0;
+    }
+    @media (min-width: 768px) {
+  .featurecard {
+    width: 20%;
+    padding-top: 0%; 
+    padding-left: 0%; 
+    padding-right: 0%; 
+    float: left;
+     margin-left: 1%;
+     margin-bottom: 24px;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 767px) {
+  .featurecard {
+    width: 100%;
+    padding-top: 0%; 
+    padding-left: 5%; 
+    padding-right: 5%; 
+     margin-bottom: 24px;
+  }
+}
+}
+</style>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPAAuto Homepage</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+        <script src="/node_modules/bulma-extensions/bulma-slider/dist/bulma-slider.min.js"></script>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+   
+        <%- include('./partials/head.ejs') %>
+
+ 
+<br>
+
+
+
+<div style="margin-left: 5%; margin-top: 2%; margin-bottom: 3%;" class = "purchase-info">
+  <a href="/cars">
+  <button type = "button" class = "btn">
+      <i class = "fas fa-backward"></i> Back to Inventory
+  </button>
+  </a>
+</div>
+        <div style="margin-top: -2%; height: fit-content;" class = "card-wrapper">
+            <div class = "card">
+              <!-- card left -->
+              <div class = "product-imgs">
+                <div style="margin-top: 0%;" class = "img-display">
+                  <div class = "img-showcase">
+                    <% apiData.photoUrls.forEach(function(inventory, index) { %>
+                        <img style="height: 70%;" src = "<%- inventory %>" alt = "Image Coming Soon">
+                      <% }) %>
+                  
+                  </div>
+                </div>
+                <div class = "img-select">
+                  
+                  
+                  <div class = "img-item">
+                    <a href = "#" data-id = "1">
+                      <img src = "<%- apiData.photoUrls[0] %>" alt = "Image Coming Soon">
+                    </a>
+                  </div>
+                  <div class = "img-item">
+                    <a href = "#" data-id = "2">
+                      <img src = "<%- apiData.photoUrls[1] %>" alt = "Image Coming Soon">
+                    </a>
+                  </div>
+                  <div class = "img-item">
+                    <a href = "#" data-id = "3">
+                      <img src = "<%- apiData.photoUrls[2] %>" alt = "Image Coming Soon">
+                    </a>
+                  </div>
+                  <div class = "img-item">
+                    <a href = "#" data-id = "4">
+                      <img src = "<%- apiData.photoUrls[3] %>" alt = "Image Coming Soon">
+                    </a>
+                  </div>
+                  <div class = "img-item">
+                    <a href = "#" data-id = "5">
+                      <img src = "<%- apiData.photoUrls[4] %>" alt = "Image Coming Soon">
+                    </a>
+                  </div>
+                  <div class = "img-item">
+                    <a href = "#" data-id = "6">
+                      <img src = "<%- apiData.photoUrls[5] %>" alt = "Image Coming Soon">
+                    </a>
+                  </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+              </div>
+              
+              <!-- card right -->
+              <div class = "product-content">
+                <p class="product-miles">Used</p>
+
+                <h2 class = "product-title"><%- dbData.year %> <%- dbData.make %> <%- dbData.model %> </h2>
+                <p class="product-miles"> <%- dbData.mileage %> Miles</p>
+             
+      
+                <div class = "product-price">
+                  <p class = "new-price">Our Price: <span><%- dbData.price %></span></p>
+                </div>
+
+                <div class = "purchase-info">
+                  <a href="/contact?vin=<%- dbData.vin %>">
+                    <button type = "button" class = "btn">
+                        <i class = "fas fa-comment"></i> Inquire Now
+                    </button>
+
+                  </a>
+                  </div>
+      
+              
+
+                  <div style="margin-top: -2%;" class = "purchase-info">
+                    <a href="/calculator?price=<%- dbData.priceraw %>">
+                    <button type = "button" class = "btn">
+                        <i class = "fas fa-calculator"></i> Calculate Your Loan
+                    </button>
+                    </a>
+                  </div>
+      
+                <div class = "product-detail">
+                    <h2>Basics</h2>
+
+                    <ul>
+                      <li>Color: <span><%- apiData.normalizedColorExterior %></span></li>
+                      <li>Interior Color: <span><%- apiData.normalizedColorInterior %></span></li>
+                      <li>Type: <span><%- apiData.bodyType %></span></li>
+                      <li>Trim: <span><%- apiData.trim %></span></li>
+                    </ul>
+                  
+            
+                  
+                
+                </div>
+   
+
+<!-- Trigger/Open The Modal -->
+<div class = "purchase-info">
+    <button id="myBtn" class = "btn">
+      View All Features
+    </button>
+  </div>
+
+  <% bodyfilter.forEach(function(bodyfilter, index) { %>
+
+    <div class="featurecard" style="width: 10%; float: left; margin-right: 1%;">
+
+        <img src="<%-bodyfilter.name%>">
+
+    </div>
+    <% }) %>
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+    <h2>Features</h2>
+    <br>
+    <h3><span>These are all the listed features associated with this vehicle.</span></h3>
+    <br>
+<ul class="modal_ul">
+<% if(apiData != null) { %>
+    <% apiData.features.forEach(function(data, index) { %>
+        <% if(!data.includes("**")){ %>
+    <li><%- data %></li>
+    <% } %>
+
+    <% }) %>
+    <% } else { %>
+        No posts found.
+    <% } %>
+
+</ul>
+
+  </div>
+      
+                
+              </div>
+
+
+            </div>
+          </div>
+   
+</div>
+
+    </div>  
+    
+    
+  </div>
+
+  <div>    
+ 
+  </div>
+  
+  <div class = "card-wrapper" style="width: 75%;">
+    <div>
+    <br>
+  </div>
+
+  <div class="items2" >
+    <% if(recommend != null) { %>
+    <% recommend.forEach(function(recommend, index) { %>
+      <a href="/lookup?vin=<%-recommend.vin%>">
+            <div class="news__card2"> 
+            <!--  <img src="https://cdn.imagin.studio/getImageCacheBundle?licenseBundleSize=1000&channelName=instagram_imagin.studio&campaignId=ad99884&customer=uscoopergoodincompany&tailoring=imagin&make=<%-recommend.make%>&modelFamily=<%-recommend.model%>&angle=1&modelYear=2015"> -->
+            <img style="height:auto;" src="<%- recommend.primaryPhotoUrl %>">
+                <h2><%- recommend.year %> <%- recommend.make %> <%- recommend.model %></h2>
+                <p><%- recommend.price %></p>
+                <p><%- recommend.mileage %> Miles</p>
+                
+              </a>
+            </div>
+          </a>
+          <% }) %>
+          <% } else { %>
+              No posts found.
+          <% } %>
+      </div>
+    </div>
+<br>
+<br>
+<br>
+<%- include('./partials/footer.ejs') %>
+
+    <script> 
+    // Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+    
+    const imgs = document.querySelectorAll('.img-select a');
+const imgBtns = [...imgs];
+let imgId = 1;
+
+imgBtns.forEach((imgItem) => {
+    imgItem.addEventListener('click', (event) => {
+        event.preventDefault();
+        imgId = imgItem.dataset.id;
+        slideImage();
+    });
+});
+
+function slideImage(){
+    const displayWidth = document.querySelector('.img-showcase img:first-child').clientWidth;
+
+    document.querySelector('.img-showcase').style.transform = `translateX(${- (imgId - 1) * displayWidth}px)`;
+}
+
+window.addEventListener('resize', slideImage);
+    </script>
+</body>
+</html> 

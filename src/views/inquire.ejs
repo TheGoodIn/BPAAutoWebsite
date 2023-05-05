@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  .test{
+    font-size: 3rem;
+    text-transform: capitalize;
+    margin-top: 5%;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    
+  }
+   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+</style>
+<head>
+ 
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js News</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <script src="/node_modules/bulma-extensions/bulma-slider/dist/bulma-slider.min.js"></script>
+
+</head>
+<body>
+    
+        <%- include('./partials/head.ejs') %>
+    
+
+<br>
+
+<br>
+<center>
+<h1 class="title is-2">Car Inquires</h1>
+
+<h1 class="subtitle is-5">We just need a little bit of information so a representative can reach out!</h1>
+</center>
+<br>
+<br>
+<form method="GET" action="/post" id="sign-in-form">
+
+    <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">Car</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+                
+              <input name="vin" class="input is-success"  type="text" value="<%- carinfo%>" readonly>
+            </div>
+         
+          </div>
+        </div>
+      </div>
+    <div class="field is-horizontal">
+        <div class="field-label is-normal">
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <p class="control is-expanded has-icons-left">
+              <input class="input" name="name" type="text" placeholder="Name">
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control is-expanded has-icons-left has-icons-right">
+              <input class="input is-success" type="email" name="email" placeholder="Email" placeholder="alex@smith.com">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="field is-horizontal">
+        <div class="field-label"></div>
+        <div class="field-body">
+          <div class="field is-expanded">
+            <div class="field has-addons">
+              <p class="control">
+                <a class="button is-static">
+                  +1
+                </a>
+              </p>
+              <p class="control is-expanded">
+                <input class="input" type="tel" name="phone" placeholder="Your phone number">
+              </p>
+            </div>
+            <p class="help">Do not enter any -</p>
+          </div>
+        </div>
+      </div>
+      
+   
+      
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">Preferred Method of Contact</label>
+        </div>
+        <div class="field-body">
+          <div class="field is-narrow">
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="phonecontact">
+                Phone
+              </label>
+              <label class="radio">
+                <input type="radio" name="emailcontact">
+                Email
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">Subject</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <input name="subject" class="input is-danger" type="text" placeholder="e.g. More Information Required">
+            </div>
+            <p class="help is-danger">
+              This field is required
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">Question</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <textarea class="textarea" name="detail" placeholder="Explain how we can help you"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <!-- Left empty for spacing -->
+        </div>
+     
+    </div>
+    <button type="submit" class="button is-medium is-primary">Submit</button>
+  </form>
+    <script>
+      function callfunction() {
+        var slider = document.getElementById("sliderWithValue");
+        <meta http-equiv="refresh" content="7; url='https://www.w3docs.com'" />
+
+
+
+
+
+      }
+
+
+      </script>
+
+
+
+</body>
+</html> 

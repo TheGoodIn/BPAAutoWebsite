@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  .test{
+    font-size: 3rem;
+    text-transform: capitalize;
+    margin-top: 5%;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    
+  }
+   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+</style>
+<head>
+ 
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPAAuto Maintenance</title>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <script src="/node_modules/bulma-extensions/bulma-slider/dist/bulma-slider.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body style="background-color: #fafafa;">
+    
+        <%- include('./partials/head.ejs') %>
+        <img src="/img/Maintenance.png">
+
+<br>
+
+<br>
+<center>
+    <div style="font-family: 'Open Sans', sans-serif;">
+        <h1 class="title is-1" style="color: #00476b;">About Our Maintenance Center.</h1>
+        
+        <h1 style="font-weight: 400; color: #00476b;" class="subtitle is-4">Learn more about our Team and Services!</h1>
+    </center>
+    <br>
+    <br>
+
+        <div style="font-family: 'Open Sans', sans-serif;" class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5"><img class="rounded-circle img-fluid" src="/img/car1.png"></div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                        <h2 class="display-4" style="color: #00476b; font-weight: 600;">Our Services.</h2>
+                        <p>Here at BPAAuto we offer a large variety of car maintenance services. <br>• Air Filter Replacement<br>• Battery Replacement<br>• Brake Pad Replacement<br>• Cabin Air Filter Replacement<br>• Tire Repair<br>• Tire Replacement<br>• Tire Rotation<br>• Multipoint Inspection<br>• Oil Change<br>• Spark Plug Replacement<br>• Wiper Fluid Refill<br>• Wiper Replacement</p>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5"><img class="rounded-circle img-fluid" src="/img/car2.png"></div>
+                </div>
+                <div class="col-lg-6 order-lg-2">
+                    <div class="p-5">
+                        <h2 class="display-4" style="color: #00476b; font-weight: 600;">Our Commitment.&nbsp;</h2>
+                        <p>At BPA Auto, we are deeply committed to ensuring that our guests have the best possible experience when they choose to do business with us. We believe that delivering exceptional customer service is at the heart of any successful enterprise, and as such, we strive to exceed our customers' expectations every time.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+<br>
+<br>  
+<br> 
+<br> 
+<center>
+  <div style="font-family: 'Josefin Sans', sans-serif;">
+      <h1 class="title is-1" style="color: #00476b;">Schedule Maintenance Appointment.</h1>
+      
+      <h1 style="font-weight: 400; color: #00476b;" class="subtitle is-4">Schedule a appointment with our knowledgeable team!</h1>
+  </center>
+<br>
+<br>
+<center>
+<form method="GET" class="formresize" style="margin-right: 5%;" action="/maintenancepost" id="sign-in-form">
+
+   
+    <div class="field is-horizontal">
+        <div class="field-label is-normal">
+            <label class="label">Contact Information</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <p class="control is-expanded has-icons-left">
+              <input class="input" name="name" type="text" placeholder="Name" required>
+              <span class="icon is-small is-left">
+                <i class="fas fa-user"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control is-expanded has-icons-left has-icons-right">
+              <input class="input is-success" type="email" name="email" placeholder="Email" placeholder="alex@smith.com" required>
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      
+      <div class="field is-horizontal">
+        <div class="field-label"></div>
+        <div class="field-body">
+          <div class="field is-expanded">
+            <div class="field has-addons">
+              <p class="control">
+                <a class="button is-static">
+                  +1
+                </a>
+              </p>
+              <p class="control is-expanded">
+                <input class="input" type="tel" name="phone" placeholder="Your phone number" required>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+   
+      
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <label class="label">Preferred Method of Contact</label>
+        </div>
+        <div class="field-body">
+          <div class="field is-narrow">
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="phonecontact">
+                Phone
+              </label>
+              <label class="radio">
+                <input type="radio" name="emailcontact" >
+                Email
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">Car Details</label>
+        </div>
+         <div class="field-body">
+          <div class="field">
+            <p class="control is-expanded has-icons-left">
+              <input class="input" name="make" type="text" placeholder="Make" required>
+              <span class="icon is-small is-left">
+                <i class="fas fa-car"></i>
+                          </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control is-expanded has-icons-left has-icons-right">
+              <input class="input" name="model" type="text" placeholder="Model" required>
+              <span class="icon is-small is-left">
+                <i class="fas fa-car-side"></i>
+            </span>
+            
+            </p>
+          </div>
+        </div>
+      </div>
+      
+    
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+        </div>
+         <div class="field-body">
+          <div class="field">
+            <p class="control is-expanded has-icons-left has-icons-right">
+              <input class="input" name="year" type="number" placeholder="Year" required>
+              <span class="icon is-small is-left">
+                <i class="fas fa-calendar-check"></i>
+            </span>
+            
+            </p>
+          </div>
+          <div class="select" style="margin-right: 1%;">
+            <select id="needed" name="needed" required>
+              <option>Type of Maintenance Needed</option>
+              <option>Air Filter Replacement</option>
+              <option>Battery Replacement</option>
+              <option>Brake Pad Replacement</option>
+              <option>Cabin Air Filter Replacement</option>
+              <option>Tire Repair</option>
+              <option>Tire Replacement</option>
+              <option>Tire Rotation</option>
+              <option>Multipoint Inspection</option>
+              <option>Oil Change</option>
+              <option>Spark Plug Replacement</option>
+              <option>Wiper Fluid Refill</option>
+              <option>Wiper Replacement</option>
+
+
+            </select>
+          </div>
+          <div class="field">
+            <p class="control is-expanded has-icons-left">
+              <input class="input" name="date" type="date" placeholder="Make" required>
+              <span class="icon is-small is-left">
+                <i class="fas fa-calendar"></i>
+                          </span>
+            </p>
+            <p class="help">Perferred Maintance Date</p>
+          </div>
+        </div>
+      </div>
+
+
+   <br>
+      
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">Questions</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <textarea class="textarea" name="detail" placeholder="If you have any other questions that our team can help you with, just let us know!"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="field is-horizontal">
+        <div class="field-label">
+          <!-- Left empty for spacing -->
+        </div>
+     
+    </div>
+    <button type="submit" style="margin-left: 90%; background-color: #00476b; font-family: 'Josefin Sans', sans-serif; font-weight: 700;" class="button is-medium is-primary">Submit</button>
+  </form>
+</center>
+    <script>
+      function callfunction() {
+        var slider = document.getElementById("sliderWithValue");
+        <meta http-equiv="refresh" content="7; url='https://www.w3docs.com'" />
+
+
+
+
+
+      }
+
+
+      </script>
+
+</div>
+
+<br>
+<br>
+<br>
+
+<%- include('./partials/footer.ejs') %>
+
+</body>
+</html> 
